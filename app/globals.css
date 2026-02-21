@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 210 20% 92%;
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
+    --primary: 0 72% 51%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 16% 16%;
+    --muted-foreground: 215 14% 55%;
+    --accent: 0 72% 51%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 16% 18%;
+    --input: 220 16% 18%;
+    --ring: 0 72% 51%;
+    --radius: 0.5rem;
+    --chart-1: 0 72% 51%;
+    --chart-2: 217 91% 60%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 270 76% 60%;
+
+    --arena-red: 0 72% 51%;
+    --arena-blue: 217 91% 60%;
+    --arena-dark: 220 20% 4%;
+    --arena-surface: 220 18% 8%;
+    --arena-surface-2: 220 16% 12%;
+    --arena-border-glow: 0 72% 51%;
+    --arena-success: 142 71% 45%;
+    --arena-warning: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .arena-glow-red {
+    box-shadow: 0 0 20px hsl(0 72% 51% / 0.3), 0 0 60px hsl(0 72% 51% / 0.1);
+  }
+  .arena-glow-blue {
+    box-shadow: 0 0 20px hsl(217 91% 60% / 0.3), 0 0 60px hsl(217 91% 60% / 0.1);
+  }
+  .arena-glow-green {
+    box-shadow: 0 0 20px hsl(142 71% 45% / 0.3), 0 0 60px hsl(142 71% 45% / 0.1);
+  }
+  .arena-panel {
+    background: linear-gradient(
+      180deg,
+      hsl(220 18% 10%) 0%,
+      hsl(220 20% 6%) 100%
+    );
+    border: 1px solid hsl(220 16% 18%);
+  }
+  .arena-panel-red {
+    border-color: hsl(0 72% 51% / 0.4);
+    background: linear-gradient(
+      135deg,
+      hsl(0 72% 51% / 0.08) 0%,
+      hsl(220 18% 10%) 50%
+    );
+  }
+  .arena-panel-blue {
+    border-color: hsl(217 91% 60% / 0.4);
+    background: linear-gradient(
+      135deg,
+      hsl(217 91% 60% / 0.08) 0%,
+      hsl(220 18% 10%) 50%
+    );
+  }
+  .arena-text-glow {
+    text-shadow: 0 0 10px hsl(0 72% 51% / 0.5);
+  }
+  .arena-text-glow-blue {
+    text-shadow: 0 0 10px hsl(217 91% 60% / 0.5);
+  }
+  .arena-scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(0 0% 0% / 0.03) 2px,
+      hsl(0 0% 0% / 0.03) 4px
+    );
+  }
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
